@@ -73,3 +73,23 @@ textarea
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+/* Media Queries */
+@media (max-width: 767px) {
+    .modal-dialog {
+        max-width: 90%; /* Make modals take up more width on smaller screens */
+    }
+
+    .card-img-top {
+        height: auto; /* Ensure images adjust in height */
+    }
+}
+
+@media (max-width: 991px) {
+    .card {
+        margin-bottom: 20px; /* Adjust bottom margin for cards */
+    }
+
+    .container {
+        padding: 0 10px; /* Reduce padding for medium screens */
+    }
+}

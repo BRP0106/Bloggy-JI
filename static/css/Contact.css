@@ -1,7 +1,9 @@
-.container-fluid {
-    margin-top: 100px;
+/* General styles */
+.container {
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     padding: 15px;
-    min-height: 540px;
 }
 
 .card {
@@ -14,7 +16,6 @@
 .form-control {
     border: 2px solid purple;
     border-radius: 20px;
-    font-size: 14px;
 }
 
 .send-button {
@@ -24,7 +25,7 @@
     padding: 8px 20px;
     border-radius: 50px;
     border: none;
-    width: 100%;
+    width: 100px;
     transition: 0.3s;
 }
 
@@ -41,12 +42,23 @@ h2 {
 
 .image {
     background-color: purple;
-    width: 50px;
-    height: 50px;
 }
 
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.737), rgba(0, 0, 0, 0.729)), url('/static/img/bg.jpg') top/cover no-repeat fixed;
+}
+
+/* Responsive styles */
+@media (min-width: 769px) {
+    .card {
+        width: 49rem;
+        height: 30rem;
+    }
+
+    .container-fluid {
+        margin-top: 150px;
+        min-height: 540px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -56,44 +68,25 @@ body {
     }
 
     .col-lg-6 {
+        flex: 0 0 100%;
         max-width: 100%;
-        margin-bottom: 20px;
     }
 
     .container-fluid {
-        margin-top: 50px;
-        padding: 10px;
-    }
-
-    .form-control, .send-button {
-        font-size: 12px;
-    }
-
-    .image {
-        width: 40px;
-        height: 40px;
-    }
-
-    h2 {
-        font-size: 24px;
+        margin-top: 100px;
     }
 }
 
 @media (max-width: 480px) {
+    h2 {
+        font-size: 20px;
+    }
+
     .form-control, .send-button {
         font-size: 12px;
     }
 
-    .image {
-        width: 35px;
-        height: 35px;
-    }
-
     .card-body {
         padding: 10px;
-    }
-
-    h2 {
-        font-size: 20px;
     }
 }
