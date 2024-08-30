@@ -77,7 +77,6 @@
                 <a href="{% url 'Profile' %}"><img src="{{ request.user.profile.photo.url }}" height="40px" width="40px" class="rounded-circle  nav-item mx-2 img"></a>
         {% else %}
             <a href="{% url 'LoginForm' %}" class="login-button " role="button">Login</a>
-            <a href="{% url 'RegistrationForm' %}" class="registration-button mx-2"  role="button">Registration</a>
         {% endif %}
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
