@@ -1,62 +1,99 @@
-/* bg1{
-    background-color: rgb(142, 186, 186);
-} */
-
-.form-control
-{
-    border: 2px solid purple;
-    border-radius:20px;
+.container-fluid {
+    margin-top: 100px;
+    padding: 15px;
+    min-height: 540px;
 }
-.send-button
-{
+
+.card {
+    background-color: rgba(255, 255, 255, 0.689);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border: 2px solid purple;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.send-button {
     background-color: #800080;
     color: #fff;
     font-size: 14px;
     padding: 8px 20px;
     border-radius: 50px;
-    text-decoration: none;
-    transition: 0.3s;
     border: none;
-    width: 100px;
-}
-.send-button:hover
-{
-   background-color: #8b008b;
-   color:white;
-   text-decoration: none;
-}
-.col
-{
-    background-color: rgba(255, 255, 255, 0.341);
-    border-radius:20px;
-    padding:10px;
+    width: 100%;
+    transition: 0.3s;
 }
 
-.bg1{
-    background-color: rgba(255, 255, 255, 0.689);
-}
-
-h1
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.send-button:hover {
+    background-color: #8b008b;
     color: white;
-    margin: 20px;
 }
-body
-{
-  background: linear-gradient(rgba(0, 0, 0, 0.737),rgba(0, 0, 0, 0.729)),url('/static/img/bg.jpg')top/cover no-repeat fixed;
 
+h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
 }
-.image
-{
+
+.image {
     background-color: purple;
+    width: 50px;
+    height: 50px;
 }
-.container
-{
-    overflow-y: auto;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.737), rgba(0, 0, 0, 0.729)), url('/static/img/bg.jpg') top/cover no-repeat fixed;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .col-lg-6 {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .container-fluid {
+        margin-top: 50px;
+        padding: 10px;
+    }
+
+    .form-control, .send-button {
+        font-size: 12px;
+    }
+
+    .image {
+        width: 40px;
+        height: 40px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-control, .send-button {
+        font-size: 12px;
+    }
+
+    .image {
+        width: 35px;
+        height: 35px;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
 }

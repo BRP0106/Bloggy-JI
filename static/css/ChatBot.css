@@ -1,72 +1,112 @@
-.container
-{
+.container {
     margin-top: 120px;
-    width: 30%;
-    height: 80%;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
     border: 2px solid purple;
     border-radius: 10px;
-    background: linear-gradient(rgba(0, 0, 0, 0.737),rgba(0, 0, 0, 0.729)),url('/static/img/bg.jpg')top/cover no-repeat fixed;
-
+    background: linear-gradient(rgba(0, 0, 0, 0.737),rgba(0, 0, 0, 0.729)), url('/static/img/bg.jpg') top/cover no-repeat fixed;
+    padding: 20px;
+    box-sizing: border-box;
 }
-.message-container
-{
+
+.message-container {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    height: 90%;
+    max-height: 400px;
     overflow-y: auto;
-    overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
-.message
-{
+
+.message {
     margin-bottom: 10px;
     display: inline-block;
     clear: both;
-
 }
-.user-message
-{
+
+.user-message, .bot-message {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.user-message {
     float: right;
     background-color: purple;
     color: white;
-    padding: 5px 10px;
-    border-radius: 10px;
-    max-width: 80%;
-
+    margin-left: 40px;
 }
-.bot-message
-{
+
+.bot-message {
     float: left;
     background-color: white;
     color: purple;
-    padding: 5px 10px;
-    border-radius: 10px;
-    max-width: 80%;
+    margin-right: 40px;
 }
-.form-control
-{
+
+.form-control {
     border: 1px solid purple;
     margin-top: 10px;
-
+    width: 100%;
 }
-.user-image
-{
+
+.user-image, .bot-image {
     height: 35px;
     width: 35px;
     border-radius: 50%;
+    border: 1px solid purple;
+}
+
+.user-image {
     float: right;
     margin-left: 5px;
-    border:1px solid purple;
 }
-.bot-image
-{
-    height: 35px;
-    width: 35px;
-    border-radius: 50%;
+
+.bot-image {
     float: left;
     margin-right: 5px;
-    border:1px solid purple;
     background-color: white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin-top: 50px;
+    }
+
+    .message-container {
+        max-height: 300px;
+    }
+
+    .user-message, .bot-message {
+        max-width: 100%;
+    }
+
+    .user-image, .bot-image {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .message-container {
+        max-height: 200px;
+    }
+
+    .user-message, .bot-message {
+        font-size: 14px;
+    }
+
+    .user-image, .bot-image {
+        height: 25px;
+        width: 25px;
+    }
 }
