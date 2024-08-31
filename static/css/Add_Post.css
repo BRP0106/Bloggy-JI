@@ -93,3 +93,7 @@ textarea
         padding: 0 10px; /* Reduce padding for medium screens */
     }
 }
+.signup
+{
+    color: white;
+}
