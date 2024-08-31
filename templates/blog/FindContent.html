@@ -2,25 +2,39 @@
 
 {% block smartaiactive %}active{% endblock %}
 
-
 {% load static %}
 
 {% block body %}
 <link rel="stylesheet" href="{% static 'css/FindContent.css' %}">
-<div class="container">
+<div class="container" style="margin-top: 100px;">
     <div id="content-container" class="content-container">
         {% for c in contents %}
-        <div class="message">
+        <div class="row mb-4">
             {% if request.user.is_authenticated %}
-                <img src="{{ request.user.profile.photo.url }}" class="user-image"><div class="user-message">{{ c.input }}</div>
+            <div class="col-12 d-flex align-items-start">
+                <img src="{{ request.user.profile.photo.url }}" class="user-image me-2" style="width: 50px; height: 50px;">
+                <div class="user-message flex-fill mt-1 p-2 rounded">
+                    {{ c.input }}
+                </div>
+            </div>
             {% else %}
-                <img src="{% static 'img/profile.jpeg' %}" class="user-image"><div class="user-message">{{ c.input }}</div>
+            <div class="col-12 d-flex align-items-start">
+                <img src="{% static 'img/profile.jpeg' %}" class="user-image me-2" style="width: 50px; height: 50px;">
+                <div class="user-message flex-fill mt-1 p-2 rounded">
+                    {{ c.input }}
+                </div>
+            </div>
             {% endif %}
-            <img src="{% static 'img/chatbot.webp' %}" class="ai-image img-fluid"><div class="ai-message">{{ c.content }}</div>
+            <div class="col-12 d-flex align-items-start mt-2">
+                <img src="{% static 'img/chatbot.webp' %}" class="ai-image me-2" style="width: 50px; height: 50px;">
+                <div class="ai-message flex-fill mt-5 p-2 rounded">
+                    {{ c.content }}
+                </div>
+            </div>
         </div>
         {% endfor %}
     </div>
-    <div class="content-form">
+    <div class="content-form mt-4">
         <form action="{% url 'generate_content' %}" method="post">
             {% csrf_token %}
             <div class="input-group rounded">

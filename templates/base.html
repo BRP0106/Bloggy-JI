@@ -75,7 +75,7 @@
             border: 2px solid purple;
         }
 
-       
+
         textarea {
             border: 2px solid purple;
         }
@@ -88,18 +88,19 @@
             color: purple;
             /* hover text color */
         }
-        .modalbutton
-        {
+
+        .modalbutton {
             background-color: purple;
             /* button background color */
             border-color: purple;
             /* button border color */
             color: white;
-            /* button text color */  
+            /* button text color */
             padding: 5px;
             width: 150px;
             border-radius: 50px;
         }
+
         .modalbutton:hover {
             background-color: white;
             /* hover background color */
@@ -108,19 +109,31 @@
             color: purple;
             /* hover text color */
         }
-        .link
-        {
+
+        .link {
             color: white;
         }
-        .link:hover
-        {
+
+        .link:hover {
             cursor: pointer;
             color: blue;
         }
-        .signup
-        {
-            color:white;
+
+        .signup {
+            color: white;
         }
+
+        /* Set the background color of the toggle button to purple */
+        .navbar-toggler {
+            border: 2px solid purple;
+            /* Optional: Add a purple border */
+            color: purple;
+            /* Set the background color */
+        }
+
+       
+
+       
     </style>
 
 </head>
@@ -177,10 +190,10 @@
                         <li class="nav-item my">
                             <a class="nav-link mx-lg-2 {% block contactactive %}{% endblock %}"
                                 href="{% url 'Contacts' %}">Contact Us</a>
-                
-                        {% block search %}
 
-                        {% endblock %}
+                            {% block search %}
+
+                            {% endblock %}
                     </ul>
                 </div>
             </div>
@@ -229,14 +242,16 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12">
-                                <a data-bs-toggle="modal" data-bs-target="#Forgotpassword"><span class="link">Forgot password?</span></a><br><br>
+                                <a data-bs-toggle="modal" data-bs-target="#Forgotpassword"><span class="link">Forgot
+                                        password?</span></a><br><br>
 
                                 <button type="submit" class="modalbutton">Login</button><br><br>
                             </div>
                         </div>
                         <div class="signup">
                             <span class="signup">Don't have an account?</span>
-                            <a data-bs-toggle="modal" data-bs-target="#registration"><Span class="link">Signup</Span></a>
+                            <a data-bs-toggle="modal" data-bs-target="#registration"><Span
+                                    class="link">Signup</Span></a>
 
                         </div>
                     </form>

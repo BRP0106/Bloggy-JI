@@ -9,25 +9,43 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/Full_Size.css' %}">
 
 <div class="container" style="margin-top:120px">
-    <div class="embed-responsive embed-responsive-16by9">
-        <video src="{{ v.video_file.url }}" class="embed-responsive-item" loop autoplay controls></video>
-    </div>
-    
-    <div class="row align-items-center mt-3">
-        <div class="col-2 col-lg-1">
-            <img src="{{ v.user.profile.photo.url }}" height="50px" width="50px" class="rounded-circle img">
+    <div class="container mt-4">
+        <div class="embed-responsive embed-responsive-16by9">
+            <video src="{{ v.video_file.url }}" class="embed-responsive-item" loop autoplay controls></video>
         </div>
-        <div class="col-10 col-lg-11">
-            <div class="row">
-                <div class="col-12 col-lg-7 mt-3">
-                    <a href="{% url 'UserProfile' v.user.id %}"><b><u>{{ v.user }}</u></b></a>
-                    <br>
-                    <p>{{ v.date }}</p>
-                </div>
-                <div class="col-12 col-lg-5 text-lg-right mt-2 mt-lg-0">
-                    <img src="{% static 'img/like.png' %}" height="20px" width="20px"> ({{ v.likes }})&nbsp;&nbsp;
-                    <img src="{% static 'img/views.png' %}" height="20px" width="20px"> ({{ v.views }})&nbsp;&nbsp;
-                    <img src="{% static 'img/comment.png' %}" height="20px" width="20px"> ({{ total_comments }})
+    
+        <div class="row border1 mt-4">
+            <div class="col-sm-12">
+                <div class="row align-items-center">
+                    <!-- User Profile Image -->
+                    <div class="col-3 col-lg-1">
+                        <img src="{{ v.user.profile.photo.url }}" height="70px" width="70px" class="rounded-circle img">
+                    </div>
+                    
+                    <!-- User Name and Date -->
+                    <div class="col-9 col-lg-5 mt-2 mt-lg-0">
+                        <a href="{% url 'UserProfile' v.user.id %}"><b><u>{{ v.user }}</u></b></a>
+                        <br>
+                        <p>{{ v.date }}</p>
+                    </div>
+    
+                    <!-- Likes, Views, and Comments -->
+                    <div class="col-12 col-lg-6 mt-3 mt-lg-0">
+                        <div class="row text-center">
+                            <div class="col-4 mt-2 mt-lg-0">
+                                <img src="{% static 'img/like.png' %}" height="20px" width="20px">
+                                <span>({{ v.likes }})</span>
+                            </div>
+                            <div class="col-4 mt-2 mt-lg-0">
+                                <img src="{% static 'img/views.png' %}" height="20px" width="20px">
+                                <span>({{ v.views }})</span>
+                            </div>
+                            <div class="col-4 mt-2 mt-lg-0">
+                                <img src="{% static 'img/comment.png' %}" height="20px" width="20px">
+                                <span>({{ total_comments }})</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
