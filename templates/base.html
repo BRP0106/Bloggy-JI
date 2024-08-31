@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloggy - JI</title>
     <link rel="stylesheet" href="{% static 'css/Base_File.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/Add_Post.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}">
 
     <link href="{% static 'img/logo.png' %}" rel="icon">
     <link href="{% static 'img/logo.png' %}" rel="apple-touch-icon">
@@ -134,7 +134,9 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12">
-                                <a href="{% url 'ForgotPasswordForm' %}">Forgot password?</a><br><br>
+                                <!-- <a href="{% url 'ForgotPasswordForm' %}">Forgot password?</a><br><br> -->
+                                <a data-bs-toggle="modal" data-bs-target="#Forgotpassword">Forgot password?</a><br><br>
+
                                 <button type="submit" class="btn btn-primary">Login</button><br><br>
                             </div>
                         </div>
@@ -147,9 +149,101 @@
             </div>
         </div>
     </div>
-    </div>
-    </div>
+   
 
+    <div class="modal fade" id="Forgotpassword" tabindex="-1" aria-labelledby="ForgotpasswordLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="ForgotpasswordLabel">Forgot Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{% url 'ForgotPassword' %}" method="post">{% csrf_token %}
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <label for="Username" class="form-label">Username:</label>
+                            <input type="text" id="Username" class="form-control" name="uname" placeholder="Username" required>
+                        </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <label for="email" class="form-label">Email:</label>
+                            <input type="email" id="email" class="form-control" name="email" placeholder="E-mail" required>
+                        </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <label for="password" class="form-label">Password:</label>
+                            <input type="password" id="password" class="form-control" name="pass" placeholder="New Password" required>
+                        </div>
+                        </div>  
+                        <button type="submit" class="btn btn-primary">Change Password</button><br><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="modal fade" id="Forgotpassword" tabindex="-1" aria-labelledby="ForgotpasswordLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="ForgotpasswordLabel">Forgot Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{% url 'Registrations' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <input type="text" name="username" placeholder="Username" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-6">
+                                <input type="text" name="FName" placeholder="First Name" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <input class="lname" type="text" name="LName" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <input type="file" id="photo" name="photo" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <input type="email" name="email" placeholder="E-mail" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <input type="text" name="bio" placeholder="Bio" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <input type="password" name="pass" placeholder="Password" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <input type="password" name="cpass" placeholder="Confirm Password" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <button type="submit" class="button1">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     {% for message in messages %}
     <div class="alert alert-{{ message.tags }} mb-0 alert-dismissible fade show" role="alert"
         style="margin-top:100px; margin-bottom: -120px;">
