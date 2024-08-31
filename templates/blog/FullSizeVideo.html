@@ -17,18 +17,22 @@
         <div class="col-2 col-lg-1">
             <img src="{{ v.user.profile.photo.url }}" height="50px" width="50px" class="rounded-circle img">
         </div>
-        <div class="col-5 col-lg-5 mt-3">
-            <a href="{% url 'UserProfile' v.user.id %}"><b><u>{{ v.user }}</u></b></a>
-            <br>
-            <p>{{ v.date }}</p>
-        </div>
-        <div class="col-5 col-lg-5 text-lg-right">
-            <img src="{% static 'img/like.png' %}" height="20px" width="20px">({{ v.likes }})&nbsp;&nbsp;
-            <img src="{% static 'img/views.png' %}" height="20px" width="20px">({{ v.views }})&nbsp;&nbsp;
-            <img src="{% static 'img/comment.png' %}" height="20px" width="20px">({{ total_comments }})
+        <div class="col-10 col-lg-11">
+            <div class="row">
+                <div class="col-12 col-lg-7 mt-3">
+                    <a href="{% url 'UserProfile' v.user.id %}"><b><u>{{ v.user }}</u></b></a>
+                    <br>
+                    <p>{{ v.date }}</p>
+                </div>
+                <div class="col-12 col-lg-5 text-lg-right mt-2 mt-lg-0">
+                    <img src="{% static 'img/like.png' %}" height="20px" width="20px"> ({{ v.likes }})&nbsp;&nbsp;
+                    <img src="{% static 'img/views.png' %}" height="20px" width="20px"> ({{ v.views }})&nbsp;&nbsp;
+                    <img src="{% static 'img/comment.png' %}" height="20px" width="20px"> ({{ total_comments }})
+                </div>
+            </div>
         </div>
     </div>
-
+    
     <div class="mt-2">
         <h4 class="card-title">{{ v.title }}</h4>
         <p>{{ v.desc }}</p>
