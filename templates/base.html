@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloggy - JI</title>
     <link rel="stylesheet" href="{% static 'css/Base_File.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/modal.css' %}"> -->
 
     <link href="{% static 'img/logo.png' %}" rel="icon">
     <link href="{% static 'img/logo.png' %}" rel="apple-touch-icon">
@@ -24,7 +24,103 @@
         nonce="YOUR_NONCE_VALUE"></script>
 
     <style>
+        .add {
+            position: fixed;
+            bottom: 70;
+            right: 10;
+        }
 
+        .modal {
+            background: linear-gradient(rgba(0, 0, 0, 0.737), rgba(0, 0, 0, 0.729)), url('/static/img/bg.jpg')top/cover no-repeat fixed;
+        }
+
+        .modal-content {
+            background: #ffffff32;
+        }
+
+        .addbutton {
+            background-color: purple;
+            border-radius: 50%;
+            width: 70%;
+        }
+
+        .img-fluid {
+            width: 70%;
+            height: auto;
+            margin: 10px;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid purple;
+            /* border color */
+        }
+
+        .card-title {
+            color: purple;
+            /* title color */
+        }
+
+        .card-text {
+            color: black;
+            /* text color */
+        }
+
+        .form-label,
+        .modal-title {
+            color: white;
+        }
+
+        .form-control {
+            border: 2px solid purple;
+        }
+
+       
+        textarea {
+            border: 2px solid purple;
+        }
+
+        .btn:hover {
+            background-color: white;
+            /* hover background color */
+            border-color: purple;
+            /* hover border color */
+            color: purple;
+            /* hover text color */
+        }
+        .modalbutton
+        {
+            background-color: purple;
+            /* button background color */
+            border-color: purple;
+            /* button border color */
+            color: white;
+            /* button text color */  
+            padding: 5px;
+            width: 150px;
+            border-radius: 50px;
+        }
+        .modalbutton:hover {
+            background-color: white;
+            /* hover background color */
+            border-color: purple;
+            /* hover border color */
+            color: purple;
+            /* hover text color */
+        }
+        .link
+        {
+            color: white;
+        }
+        .link:hover
+        {
+            cursor: pointer;
+            color: blue;
+        }
+        .signup
+        {
+            color:white;
+        }
     </style>
 
 </head>
@@ -134,23 +230,23 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12">
-                                <!-- <a href="{% url 'ForgotPasswordForm' %}">Forgot password?</a><br><br> -->
-                                <a data-bs-toggle="modal" data-bs-target="#Forgotpassword">Forgot password?</a><br><br>
+                                <a data-bs-toggle="modal" data-bs-target="#Forgotpassword"><span class="link">Forgot password?</span></a><br><br>
 
-                                <button type="submit" class="btn btn-primary">Login</button><br><br>
+                                <button type="submit" class="modalbutton">Login</button><br><br>
                             </div>
                         </div>
                         <div class="signup">
                             <span class="signup">Don't have an account?</span>
-                            <a href="{% url 'RegistrationForm' %}">Signup</a>
+                            <a data-bs-toggle="modal" data-bs-target="#registration"><Span class="link">Signup</Span></a>
+
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-   
 
+    <!-- Forgot Password Modal -->
     <div class="modal fade" id="Forgotpassword" tabindex="-1" aria-labelledby="ForgotpasswordLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -163,29 +259,32 @@
                         <div class="row mb-3">
                             <div class="col-sm-12">
                                 <label for="Username" class="form-label">Username:</label>
-                            <input type="text" id="Username" class="form-control" name="uname" placeholder="Username" required>
-                        </div>
+                                <input type="text" id="Username" class="form-control" name="uname"
+                                    placeholder="Username" required>
+                            </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12">
                                 <label for="email" class="form-label">Email:</label>
-                            <input type="email" id="email" class="form-control" name="email" placeholder="E-mail" required>
-                        </div>
+                                <input type="email" id="email" class="form-control" name="email" placeholder="E-mail"
+                                    required>
+                            </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12">
                                 <label for="password" class="form-label">Password:</label>
-                            <input type="password" id="password" class="form-control" name="pass" placeholder="New Password" required>
+                                <input type="password" id="password" class="form-control" name="pass"
+                                    placeholder="New Password" required>
+                            </div>
                         </div>
-                        </div>  
-                        <button type="submit" class="btn btn-primary">Change Password</button><br><br>
+                        <button type="submit" class="modalbutton">Change Password</button><br><br>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    
 
+    <!-- Registration Modal -->
     <div class="modal fade" id="registration" tabindex="-1" aria-labelledby="registrationLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -194,21 +293,25 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="{% url 'Registrations' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+                    <form action="{% url 'Registrations' %}" method="post" enctype="multipart/form-data">{% csrf_token
+                        %}
                         <div class="row mb-3">
                             <div class="col-sm-12">
                                 <label for="username" class="form-label">Username:</label>
-                                <input type="text" id="username" class="form-control" name="username" placeholder="Username" required>
+                                <input type="text" id="username" class="form-control" name="username"
+                                    placeholder="Username" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-6">
                                 <label for="fname" class="form-label">First Name:</label>
-                                <input type="text" id="fname" class="form-control" name="FName" placeholder="First Name" required>
+                                <input type="text" id="fname" class="form-control" name="FName" placeholder="First Name"
+                                    required>
                             </div>
                             <div class="col-sm-6">
                                 <label for="lname" class="form-label">Last Name:</label>
-                                <input class="lname" id="lname" class="form-control" type="text" name="LName" placeholder="Last Name" required>
+                                <input class="lname" id="lname" class="form-control" type="text" name="LName"
+                                    placeholder="Last Name" required>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -220,7 +323,8 @@
                         <div class="row mb-3">
                             <div class="col-sm-12">
                                 <label for="email" class="form-label">Email:</label>
-                                <input type="email" id="email" class="form-control" name="email" placeholder="E-mail" required>
+                                <input type="email" id="email" class="form-control" name="email" placeholder="E-mail"
+                                    required>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -232,18 +336,20 @@
                         <div class="row mb-3">
                             <div class="col-sm-12">
                                 <label for="password" class="form-label">Password:</label>
-                                <input type="password" id="password" class="form-control" name="pass" placeholder="Password" required>
+                                <input type="password" id="password" class="form-control" name="pass"
+                                    placeholder="Password" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12">
                                 <label for="cpassword" class="form-label">Confirm Password:</label>
-                                <input type="password" id="cpassword" class="form-control" name="cpass" placeholder="Confirm Password" required>
+                                <input type="password" id="cpassword" class="form-control" name="cpass"
+                                    placeholder="Confirm Password" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12">
-                                <button type="submit" class="button1">Register</button>
+                                <button type="submit" class="modalbutton">Register</button>
                             </div>
                         </div>
                     </form>
@@ -251,7 +357,7 @@
             </div>
         </div>
     </div>
-    
+
     {% for message in messages %}
     <div class="alert alert-{{ message.tags }} mb-0 alert-dismissible fade show" role="alert"
         style="margin-top:100px; margin-bottom: -120px;">

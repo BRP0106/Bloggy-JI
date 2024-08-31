@@ -66,10 +66,10 @@ textarea
 {
     color: red;
 }
-.container
+/* .container
 {
     overflow-y: auto;
     overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
-}
+} */
