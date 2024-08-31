@@ -16,11 +16,11 @@
 {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}">
 
-<div class="container" style="margin-top:100px">
+<div class="container" style="margin-top:120px;">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
         {% for img in Images %}
         <div class="col mb-4">
-            <div class="card image" style="width: 19rem;">
+            <div class="card image">
                 <img src="{{ img.image_file.url }}" height="350px" width="100%" class="card-img-top" alt="Upload Photo">
                 <div class="card-body">
                     <h5 class="card-title">{{ img.title }}</h5>
@@ -36,13 +36,13 @@
                             <p>&nbsp;{{ img.date }}</p>
                         </div>
                         <div class="col-4 mt-3">
-                            <a href="{% url 'FullSizeImage' img.i_id %}" role="button" class="btn" style="width:100px;margin-left:-20px;">See</a>
+                            <a href="{% url 'FullSizeImage' img.i_id %}" role="button" class="btn" style="width:100px;margin-left:-20px;">View</a>
                         </div>
                     </div>
                     <div class="row mt-2">
 
                         <div class="col-4">
-                            <img src="{% static 'img/like.png' %}" height="20px" width="20px">({{ img.likes.count }})&nbsp;&nbsp;
+                            <img src="{% static 'img/like.png' %}" height="20px" width="20px">({{ img.likes }})&nbsp;&nbsp;
                         </div>
                         <div class="col-4">
                             <img src="{% static 'img/views.png' %}" height="20px" width="20px">({{ img.views }})&nbsp;&nbsp;
@@ -56,7 +56,8 @@
             </div>
         </div>
         {% empty %}
-            <h3 class="search-result"><i><u>{{ query }}</u></i>  is Not Found ...</h3>
+
+<h3 class="search-result"><i><u>{{ query }}</u></i>  is Not Found ...</h3>
 
         {% endfor %}
     </div>
@@ -111,3 +112,5 @@
         </div>
 
 {% endblock body %}
+
+<h3 class="search-result"><i><u>{{ query }}</u></i>  is Not Found ...</h3>
