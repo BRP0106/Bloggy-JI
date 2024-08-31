@@ -186,51 +186,59 @@
     </div>
     
 
-    <div class="modal fade" id="Forgotpassword" tabindex="-1" aria-labelledby="ForgotpasswordLabel" aria-hidden="true">
+    <div class="modal fade" id="registration" tabindex="-1" aria-labelledby="registrationLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="ForgotpasswordLabel">Forgot Password</h1>
+                    <h1 class="modal-title fs-5" id="registrationLabel">Registration</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="{% url 'Registrations' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
                         <div class="row mb-3">
                             <div class="col-sm-12">
-                                <input type="text" name="username" placeholder="Username" required>
+                                <label for="username" class="form-label">Username:</label>
+                                <input type="text" id="username" class="form-control" name="username" placeholder="Username" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-6">
-                                <input type="text" name="FName" placeholder="First Name" required>
+                                <label for="fname" class="form-label">First Name:</label>
+                                <input type="text" id="fname" class="form-control" name="FName" placeholder="First Name" required>
                             </div>
                             <div class="col-sm-6">
-                                <input class="lname" type="text" name="LName" placeholder="Last Name" required>
+                                <label for="lname" class="form-label">Last Name:</label>
+                                <input class="lname" id="lname" class="form-control" type="text" name="LName" placeholder="Last Name" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12">
-                                <input type="file" id="photo" name="photo" required>
+                                <label for="photo" class="form-label">Photo:</label>
+                                <input type="file" id="photo" class="form-control" id="photo" name="photo" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12">
-                                <input type="email" name="email" placeholder="E-mail" required>
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" id="email" class="form-control" name="email" placeholder="E-mail" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12">
-                                <input type="text" name="bio" placeholder="Bio" required>
+                                <label for="bio" class="form-label">Bio:</label>
+                                <input type="text" id="bio" class="form-control" name="bio" placeholder="Bio" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12">
-                                <input type="password" name="pass" placeholder="Password" required>
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" id="password" class="form-control" name="pass" placeholder="Password" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12">
-                                <input type="password" name="cpass" placeholder="Confirm Password" required>
+                                <label for="cpassword" class="form-label">Confirm Password:</label>
+                                <input type="password" id="cpassword" class="form-control" name="cpass" placeholder="Confirm Password" required>
                             </div>
                         </div>
                         <div class="row mb-3">
