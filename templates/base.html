@@ -177,7 +177,7 @@
                         <li class="nav-item my">
                             <a class="nav-link mx-lg-2 {% block contactactive %}{% endblock %}"
                                 href="{% url 'Contacts' %}">Contact Us</a>
-                        </li>
+                
                         {% block search %}
 
                         {% endblock %}
@@ -186,7 +186,6 @@
             </div>
 
             {% if request.user.is_authenticated %}
-            <a href="{% url 'Logout' %}" class="logout-button" role="button">Logout</a>
             <a href="{% url 'Profile' %}"><img src="{{ request.user.profile.photo.url }}" height="40px" width="40px"
                     class="rounded-circle  nav-item mx-2 img"></a>
             {% else %}

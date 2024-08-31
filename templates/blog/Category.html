@@ -22,17 +22,27 @@
                     <div class="row align-items-center">
                         <div class="col-2 col-lg-1">
                             <img src="{{ post.user.profile.photo.url }}" height="50px" width="50px" class="rounded-circle img">
-
                         </div>
-                        <div class="col-5 col-lg-5 mt-3">
+                        <div class="col-10 col-lg-5 mt-3">
                             <a href="{% url 'UserProfile' post.user.id %}"><b><u>{{ post.user }}</u></b></a>
                             <br>
                             <p>{{ post.date }}</p>
                         </div>
-                        <div class="col-5 col-lg-5 text-lg-right">
-                            <img src="{% static 'img/like.png' %}" height="20px" width="20px">({{ post.likes }})&nbsp;&nbsp;
-                            <img src="{% static 'img/views.png' %}" height="20px" width="20px">({{ post.views }})&nbsp;&nbsp;
-                            <img src="{% static 'img/comment.png' %}" height="20px" width="20px">({{ post.num_comments }})
+                        <div class="col-12 col-lg-6 text-lg-right mt-2 mt-lg-0">
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <img src="{% static 'img/like.png' %}" height="20px" width="20px">
+                                    <span>({{ post.likes }})</span>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <img src="{% static 'img/views.png' %}" height="20px" width="20px">
+                                    <span>({{ post.views }})</span>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <img src="{% static 'img/comment.png' %}" height="20px" width="20px">
+                                    <span>({{ post.num_comments }})</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -49,9 +59,10 @@
             </div>
             {% empty %}
             <h3 class="col-12">No Posts in This Category</h3>
-
             {% endfor %}
         </div>
+        
+
         {% if user.is_authenticated %}
             <div class="add">
             <!-- Button trigger modal -->

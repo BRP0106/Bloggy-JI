@@ -20,13 +20,15 @@
                 <h4>{{ profile.bio }}</h4>
                 <br><br>
                 <button class="btn" data-bs-toggle="modal" data-bs-target="#EditProfile">Edit Profile</button>
-
+                <a href="{% url 'Logout' %}" class="btn" role="button">Logout</a>
+                
                 <!-- Edit Profile Modal -->
                 <div class="modal fade" id="EditProfile" tabindex="-1" aria-labelledby="EditProfileLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="EditProfileLabel">Edit Profile</h1>
+                                
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
