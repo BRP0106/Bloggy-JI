@@ -12,12 +12,12 @@ cd {% block blogsactive %} active {% endblock blogsactive %}
         <div class="col-sm-12">
             <div class="row align-items-center">
                 <!-- User Profile Image -->
-                <div class="col-2 col-lg-1">
+                <div class="col-3 col-lg-1">
                     <img src="{{ Posts.user.profile.photo.url }}" height="70px" width="70px" class="rounded-circle img">
                 </div>
                 
                 <!-- User Name and Date -->
-                <div class="col-10 col-lg-5 mt-2 mt-lg-0">
+                <div class="col-9 col-lg-5 mt-2 mt-lg-0">
                     <a href="{% url 'UserProfile' Posts.user.id %}"><b><u>{{ Posts.user }}</u></b></a>
                     <br>
                     <p>{{ Posts.date }}</p>
