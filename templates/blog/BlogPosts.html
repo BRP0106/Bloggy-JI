@@ -96,8 +96,7 @@ cd {% block blogsactive %} active {% endblock blogsactive %}
         <div class="col-md-1"><img class="rounded-circle img" src="{{ comment.user.profile.photo.url }}" height="50px"
                 width="50px"></div>
         <div class="col-md-11">
-            <b>{{ comment.user.username }}</b> <span class="badge badge-secondary">{{ comment.timestamp | naturaltime
-                }}</span>
+            <b>{{ comment.user.username }}</b> <span class="badge badge-secondary">{{ comment.timestamp | naturaltime }}</span>
             <div>{{ comment.comment }}</div>
 
             <div class="reply mx-0 mt-2">
