@@ -51,8 +51,7 @@
                         <h3 class="card-title">{{ post.title }}</h3>
                         <p>{{ post.content|truncatechars:50|safe }}</p>
                         <a href="{% url 'BlogPosts' post.b_id %}" class="btn btn-danger my-4">Continue Reading</a>
-                        <a href="{% url 'DeleteBlog' post.b_id %}" role="button" class="btn">Delete</a>
-                        <a href="{% url 'EditBlogForm' post.b_id %}" class="btn" role="button">Edit Blog</a>
+                        
                     </div>
                     <div class="col-12 col-lg-4">
                         <img src="{{ post.thumbnail.url }}" class="img-fluid"> <!-- Added responsiveness for thumbnail image -->
