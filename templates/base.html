@@ -123,10 +123,51 @@
             color: white;
         }
 
-        
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            color: purple;
+            text-align: center;
+            border-top: 4px solid purple;
+        }
 
-        
-        
+        footer {
+            background-color: white;
+            color: white;
+            text-align: center;
+            border-top: 4px solid purple;
+            margin: 5px;
+            padding: 0.5rem;
+        }
+
+        footer .h5 {
+            margin: 5px 0;
+            color: purple;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            background-color: purple;
+            padding: 5px;
+            border-radius: 50%;
+            transition: filter 0.3s ease;
+
+        }
+
+        .icon:hover {
+            background-color: #a30dad;
+            border: 2px solid #a30dad;
+        }
+
+
+
+
+
+
         /* For WebKit browsers (Chrome, Safari, Edge) */
         ::-webkit-scrollbar {
             width: 5px;
@@ -149,11 +190,13 @@
             background: purple;
             /* Darker purple color on hover */
         }
-        .navbar-toggler{
+
+        .navbar-toggler {
             border: 2px solid purple;
         }
-        .navbar-toggler-icon{
-            color:purple;
+
+        .navbar-toggler-icon {
+            color: purple;
         }
     </style>
 
@@ -408,20 +451,21 @@
 
     {% endblock body %}
 
-
-    <!-- {% block footer %}
-            <footer>
-                <div>
-                    <p>&copy; 2024 Bloggy - JI. All Rights Reserved.</p>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/ravi.bariya.3194524" target="_blank"><i><img src="{% static 'img/facebook.png' %}" alt="FaceBook" class="icon"></i></a>
-                        <a href="https://www.instagram.com/raviiiiiiii_1/" target="_blank"><i><img src="{% static 'img/instagram.png' %}" alt="Instagram" class="icon"></i></a>
-                        <a href="https://github.com/BRP0106" target="_blank"><i><img src="{% static 'img/github.png' %}" alt="github" class="icon"></i></a>
-                        <a href="https://www.linkedin.com/in/ravi-baraiya-202905298/" target="_blank"><i><img src="{% static 'img/linkedin.png' %}" alt="linkedin" class="icon"></i></a>
-                    </div>
-                </div>
-            </footer>
-        {% endblock footer %} -->
+    <footer>
+        <div>
+            <h5 class="h5">&copy; 2024 Bloggy - JI. All Rights Reserved.</h5>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/ravi.bariya.3194524" target="_blank"><i><img
+                            src="{% static 'img/facebook.png' %}" alt="FaceBook" class="icon"></i></a>
+                <a href="https://www.instagram.com/raviiiiiiii_1/" target="_blank"><i><img
+                            src="{% static 'img/instagram.png' %}" alt="Instagram" class="icon"></i></a>
+                <a href="https://github.com/BRP0106" target="_blank"><i><img src="{% static 'img/github.png' %}"
+                            alt="github" class="icon"></i></a>
+                <a href="https://www.linkedin.com/in/ravi-baraiya-202905298/" target="_blank"><i><img
+                            src="{% static 'img/linkedin.png' %}" alt="linkedin" class="icon"></i></a>
+            </div>
+        </div>
+    </footer>
 
     <!-- Bootstrap 4 -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
