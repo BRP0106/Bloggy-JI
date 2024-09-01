@@ -3,17 +3,17 @@
 
 {% block body %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}">
-
 <div class="container" style="margin-top: 100px;">
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-4 text-center">
                 {% if profile %}
-                <img src="{{ profile.photo.url }}" class="rounded-circle img" width="400px" height="400px" alt="Profile Photo">
+                <img src="{{ profile.photo.url }}" class="profile" alt="Profile Photo">
                 {% else %}
-                <img src="{% static 'img/profile.jpeg' %}" class="rounded-circle img" width="400px" height="400px" alt="Default Profile Photo">
+                <img src="{% static 'img/profile.jpeg' %}" class="profile" alt="Default Profile Photo">
                 {% endif %}
             </div>
+        
             <div class="col-md-8 mt-5">
                 <h1 class="text-center text-md-left"><u><b>{{ user.username }}</b></u></h1>
                 <h2 class="text-center text-md-left">{{ user.first_name }} {{ user.last_name }}</h2>

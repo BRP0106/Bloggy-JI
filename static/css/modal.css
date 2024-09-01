@@ -66,10 +66,12 @@ textarea
 {
     color: red;
 }
-/* .container
-{
-    overflow-y: auto;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-} */
+.profile {
+    width: 100%;
+    max-width: 400px; /* Set your desired maximum width */
+    height: auto;
+    aspect-ratio: 1 / 1; /* Ensures the width and height are equal */
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover; /* Ensures the image covers the entire circle */
+}
+ 
