@@ -73,5 +73,6 @@ textarea
     aspect-ratio: 1 / 1; /* Ensures the width and height are equal */
     border-radius: 50%; /* Makes the image round */
     object-fit: cover; /* Ensures the image covers the entire circle */
+    border: 2px solid purple;
 }
  
